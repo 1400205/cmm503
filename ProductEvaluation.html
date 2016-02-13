@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <dev lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product evaluation</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Product evaluation</title>
 
-<dev>
+        <script>
+            function validateForm() {
+                var x = document.forms["myForm"]["email"].value;
+                var atpos = x.indexOf("@");
+                var dotpos = x.lastIndexOf(".");
+                if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                    alert("Not a valid e-mail address");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
 
-    <form>
-        <fieldset>
-            <legend>Please leave a comment...</legend>
-            <label for="name">Name:</label>
-            <input type="text" name="name" value="" />
-            <label for="email">Email:</label>
-            <input type="text" name="email" value="" />
-            <label for="comments">Comment:</label>
-            <textarea name="comments">
-            </textarea>
-            <input type="submit" value="Submit" />
-        </fieldset>
-    </form>
-</dev>
-</body>
+    <dev>
+
+        <form>
+            <fieldset>
+                <legend>Please Evaluate this project...</legend>
+                <label >Name:</label>
+                <input type="text" name="name" value="" /> <br><br>
+                <label >Email:</label>
+                <input type="email" name="email" value="" /><br><br>
+                <h3>Evaluation Details</h3>
+                <div id="section">
+                    <p>Kindly Evaluate this product by choosing from the scale of 1 to 10.
+                        scale of 1 indicates worst and scale  10 indicates best.
+                    </p>
+
+                    <label>One:</label>
+                    <input type="radio" name="scale" value="1" />
+                    <label>Two:</label>
+                    <input type="radio" name="scale" value="2" />
+
+                    <label>Three:</label>
+                    <input type="radio" name="scale" value="3" />
+
+                    <label>Four:</label>
+                    <input type="radio" name="scale" value="4" />
+
+                    <label>Five:</label>
+                    <input type="radio" name="scale" value="5" />
+
+                    <label>Six:</label>
+                    <input type="radio" name="scale" value="6" />
+
+                    <label>Seven:</label>
+                    <input type="radio" name="scale" value="7" />
+
+                    <label>Eight:</label>
+                    <input type="radio" name="scale" value="8" />
+
+                    <label>Nine:</label>
+                    <input type="radio" name="scale" value="9" />
+
+                    <label>Ten:</label>
+                    <input type="radio" name="scale" value="10" />
+                    <br>
+
+                    <BR>
+
+                    <input type="submit" value="Submit" />
+
+                </div>
+            </fieldset>
+        </form>
+    </dev>
+    </body>
 </dev>
 </html>
